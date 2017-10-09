@@ -36,6 +36,17 @@ r.dbCreate('db_counter').run().then(function(response) {
 	});
 });
 
+//Configuring express to use body-parser as middle-ware.
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  res.header("Access-Control-Allow-Headers", "Content-Type");
+  res.header("Access-Control-Allow-Methods", "PUT, GET, POST, DELETE, OPTIONS");
+  next();
+});
+
 //---------------------------------------------
 //Insertion
 //---------------------------------------------
@@ -51,3 +62,11 @@ function insertData() {
 			console.log('Internal server error')
 		});
 }
+
+//---------------------------------------------
+//Server
+//---------------------------------------------
+var server = app.listen(port, function() {
+	var port = server.address().port;
+	console.log("Running");
+});

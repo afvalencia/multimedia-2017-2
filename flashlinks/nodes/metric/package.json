@@ -1,15 +1,18 @@
 {
-  "name": "node",
+  "name": "flashlinks-api",
   "version": "1.0.0",
-  "description": "",
-  "main": "counter.js",
+  "private": true,
+  "description": "flash links api",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Jorge Victoria <jhvm.puj@gmail.com>",
+  "license": "MIT",
   "dependencies": {
-    "express": "^4.15.4"
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "express-logging": "^1.1.1",
+    "logops": "^2.1.0",
+    "rethinkdbdash": "^2.3.21"
   }
 }
